@@ -1,0 +1,31 @@
+<% include pertials/header %>
+
+	<h1> Add Customer </h1>
+<form method = "POST" action = "/users/add">
+	<label>Full Names</label><br>
+	<input type="text" name="names" placeholder="Full Names">
+	<br><br>
+	<label>Email</label><br>
+	<input type="email" name="email" placeholder="Email">
+	<br><br>
+	<input type="submit" name="Enter" value="Enter"> 	
+</form>
+<br>
+<table border='1'>
+	<thead>
+		<tr>
+			<th>Full Names</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% users.forEach(function(user){ %>
+		<tr>
+			<td><%=user.Name %></td>
+			<td><%=user.email %></td>
+		</tr>
+	<% }) %>
+	</tbody>
+</table>	
+
+<% include pertials/footer %>
